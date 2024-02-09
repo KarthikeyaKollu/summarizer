@@ -1,18 +1,18 @@
 import React from 'react'
-
+import {Loader} from "./Loader"
 export const Output = () => {
     const response="Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere, voluptates modi perferendis officia pariatur quidem iste dolores animi optio reprehenderit error ea sint tempora vel nobis, quas cum. Voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere, voluptates modi perferendis officia pariatur quidem iste dolores animi optio reprehenderit error ea sint tempora vel nobis, quas cum. Voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere, voluptates modi perferendis officia pariatur quidem iste dolores animi optio reprehenderit error ea sint tempora vel nobis, quas cum. Voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere, voluptates modi perferendis officia pariatur quidem iste dolores animi optio reprehenderit error ea sint tempora vel nobis, quas cum. Voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere, voluptates modi perferendis officia pariatur quidem iste dolores animi optio reprehenderit error ea sint tempora vel nobis, quas cum. Voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere, voluptates modi perferendis officia pariatur quidem iste dolores animi optio reprehenderit error ea sint tempora vel nobis, quas cum. Voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere, voluptates modi perferendis officia pariatur quidem iste dolores animi optio reprehenderit error ea sint tempora vel nobis, quas cum. Voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere, voluptates modi perferendis officia pariatur quidem iste dolores animi optio reprehenderit error ea sint tempora vel nobis, quas cum. Voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere, voluptates modi perferendis officia pariatur quidem iste dolores animi optio reprehenderit error ea sint tempora vel nobis, quas cum. Voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere, voluptates modi perferendis officia pariatur quidem iste dolores animi optio reprehenderit error ea sint tempora vel nobis, quas cum. Voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere, voluptates modi perferendis officia pariatur quidem iste dolores animi optio reprehenderit error ea sint tempora vel nobis, quas cum. Voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere, voluptates modi perferendis officia pariatur quidem iste dolores animi optio reprehenderit error ea sint tempora vel nobis, quas cum. Voluptate."
   return (
     <div>
       <div className='my-10 max-w-full flex justify-center items-center'>
-        {false ? (
-          <img src={""} alt='loader' className='w-20 h-20 object-contain' />
+        {true ? (
+          <Loader/>
         ) : false ? (
           <p className='font-inter font-bold text-black text-center'>
             Well, that wasn't supposed to happen...
             <br />
             <span className='font-satoshi font-normal text-gray-700'>
-              {error?.data?.error}
+              {}
             </span>
           </p>
         ) : (
