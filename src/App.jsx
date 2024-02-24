@@ -13,7 +13,7 @@ const App = () => {
 
   return (
 <main>
-      {/* <div className='main'>
+      <div className='main'>
         <div className='gradient' />
       </div>
 
@@ -23,7 +23,7 @@ const App = () => {
         <Input sendDataToParent={handleDataFromChild}/>
         {value}
         <Output/>
-      </div> */}
+      </div>
 
       <ReceiptImage/>
     </main>
