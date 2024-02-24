@@ -5,8 +5,11 @@ export const Input = () => {
     const [Submit, setSubmit] = useState(false)
     const [value, setvalue] = useState("")
     const handleSubmit =()=>{
-        console.log("clicked")
+        console.log(value);
+        sendDataToParent(value);
+        
     }
+   
   return (
     <div className='flex flex-col w-full gap-2'>
      <form
@@ -26,6 +29,7 @@ export const Input = () => {
           />
           <button
             type='submit'
+            
             className='submit_btn peer-focus:border-gray-700 peer-focus:text-gray-700 '
           >
 
@@ -36,5 +40,4 @@ export const Input = () => {
     </div>
   )
 }
-
 
