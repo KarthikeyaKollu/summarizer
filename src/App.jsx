@@ -1,3 +1,4 @@
+import { Input } from './components/Input';
 import React, { useState } from 'react';
 
 function App() {
@@ -25,9 +26,7 @@ function App() {
 
   return (
     <div>
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={handleSubmit}>Upload Image</button>
-      {responseMessage && <p>{responseMessage}</p>}
+      <Input/>
     </div>
   );
 }
