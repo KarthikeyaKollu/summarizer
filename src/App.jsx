@@ -1,33 +1,35 @@
-import {Hero} from "./components/Hero"
-import {Input} from "./components/Input"
-import {Output} from "./components/Output"
-import React,{useState} from 'react'
-import {ReceiptImage} from "./components/Temp"
-const App = () => {
-  const [value, setvalue] = useState("")
-  const handleDataFromChild = (data) => {
-    // Do something with the data received from the child
-    console.log("Data received from child:", data);
-    setvalue(data);
-};
+import React, { useState } from 'react';
+
+function App() {
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [responseMessage, setResponseMessage] = useState('');
+
+  const handleFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append('image', selectedFile);
+
+    const response = await fetch('http://127.0.0.1:5000/process-image', { // Replace with your backend URL
+      method: 'POST',
+      body: formData,
+    });
+
+    const data = await response.json();
+    setResponseMessage(data.message);
+  };
 
   return (
-<main>
-      <div className='main'>
-        <div className='gradient' />
-      </div>
-
-      <div className='app'>
-        <Hero/>
-       
-        <Input sendDataToParent={handleDataFromChild}/>
-        {value}
-        <Output/>
-      </div>
-
-      <ReceiptImage/>
-    </main>
-  )
+    <div>
+      <input type="file" onChange={handleFileChange} />
+      <button onClick={handleSubmit}>Upload Image</button>
+      {responseMessage && <p>{responseMessage}</p>}
+    </div>
+  );
 }
 
-export default App
+export default App;
